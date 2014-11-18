@@ -4,3 +4,4 @@ Git has a mutable index called stage.
 Git tracks changes.
 Git add test of files.
 Test remote Git modify.
+Create a new branch is quick.
