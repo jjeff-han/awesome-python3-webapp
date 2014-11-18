@@ -3,3 +3,4 @@ Git is free software distributed under GPL.
 Git has a mutable index called stage.
 Git tracks changes.
 Git add test of files.
+Test remote Git modify.
