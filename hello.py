@@ -6,5 +6,6 @@ a = 5
 if a!=5:
     print "error"
 
+Git has a mutable index called stage.
 
 Git is free software distributed under the GPL.
