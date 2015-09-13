@@ -7,3 +7,4 @@ if a!=5:
     print "error"
 
 
+Git is free software distributed under the GPL.
