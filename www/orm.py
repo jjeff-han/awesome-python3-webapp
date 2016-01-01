@@ -56,7 +56,11 @@ def execute(sql, args, autocommit=True):
             yield from cur.execute(sql.replace('?', '%s'), args)
             affected = cur.rowcount
             yield from cur.close()
+            if not autocommit:
+                yield from conn.commit()
         except BaseException as e:
+            if not autocommit:
+                yield from conn.commit()
             raise
         return affected
 
@@ -124,7 +128,7 @@ class ModelMetaclass(type):
                 else:
                     fields.append(k)
         if not primaryKey:
-            raise StandardError('Primary key not found.')
+            pass#raise StandardError('Primary key not found.')
         for k in mappings.keys():
             attrs.pop(k)
         escaped_fields = list(map(lambda f: '`%s`' % f, fields))
